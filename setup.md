@@ -18,11 +18,7 @@ rm hoge
 ```
 # .dotfiles
 ```
-mv ~/.vim ~/dotfiles/
-ln -sf ~/.dotfiles/.vim ~/.vim
-ln -sf ~/.dotfiles/.zshrc ~/.zshrc
-ln -sf ~/.dotfiles/.zshenv ~/.zshenv
-ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+sh ~/.dotfiles/ln.sh
 ```
 # anyenv
 ```
