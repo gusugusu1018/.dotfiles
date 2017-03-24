@@ -1,5 +1,5 @@
 #zshrc
-figlet -f kban Hello zsh
+figlet Hello zsh
 #echo "Hello zsh"
 # zprofile
 # zsh最強の2行
