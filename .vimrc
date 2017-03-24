@@ -41,7 +41,7 @@ filetype plugin indent on
 " どうせだから jellybeans カラースキーマを使ってみましょう
 set t_Co=256
 syntax on
-colorscheme jellybeans
+" colorscheme jellybeans
 
 if has('lua')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
