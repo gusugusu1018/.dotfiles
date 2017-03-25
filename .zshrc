@@ -1,7 +1,3 @@
-#zshrc
-figlet Hello
-#sl
-#echo "Hello zsh"
 # zprofile
 autoload -U compinit
 compinit
@@ -101,3 +97,7 @@ if [ -d $HOME/.anyenv ] ; then
 #    done
 fi
 
+#zshrc
+figlet Hello
+#sl
+#echo "Hello zsh"
