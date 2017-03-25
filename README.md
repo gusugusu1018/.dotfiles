@@ -1,13 +1,21 @@
 # This is my environment
-  1. zsh
-  2. vim
-  3. tmux
-  4. zplug
-  5. neobundle
-  6. anyenv
-  7. pyenv
-  8. virtualenv
-  9. docker
+  * zsh
+    * zplug
+      * zsh-users/zsh-autosuggestions
+      * zsh-users/zsh-completions
+      * tcnksm/docker-alias
+  * vim
+    * neobundle
+      * Shougo/vimproc
+      * Shougo/neocomplete.vim
+      * Townk/vim-autoclose
+      * ekalinin/Dockerfile.vim
+      * rcmdnk/vim-markdown
+  * tmux
+  * anyenv
+    * pyenv
+      * virtualenv
+  * docker
 
 ## Install git
 ```
