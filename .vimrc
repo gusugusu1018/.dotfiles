@@ -27,6 +27,12 @@ NeoBundle 'Shougo/vimproc', {
   \     'unix' : 'make -f make_unix.mak',
   \    },
   \ }
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'rcmdnk/vim-markdown'
+" vim-markdown {{{
+let g:vim_markdown_folding_disabled = 1
+" " }}}
 
 call neobundle#end()
 
@@ -43,12 +49,13 @@ set t_Co=256
 syntax on
 " colorscheme jellybeans
 
+" NeoComplete
 if has('lua')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
         \ 'depends' : 'Shougo/vimproc',
         \ 'autoload' : { 'insert' : 1,}
         \ }
-  endif
+endif
 
   " neocomplete {{{
   let g:neocomplete#enable_at_startup               = 1

@@ -9,7 +9,7 @@ compinit
 # autoload -U promptinit
 # promptinit
 # my prompt
-PROMPT='%F{4}%~%f%F{3}>%f%F{4}>%f%F{5}>%f%F{6}>%f '
+PROMPT='%F{6}%~ %f%F{3}>%f%F{4}>%f%F{5}>%f%F{6}>%f '
 
 # zplug section
 source ~/.zplug/init.zsh
