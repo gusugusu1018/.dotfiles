@@ -1,6 +1,6 @@
 # zsh
 ```
-sudo apt install git vim zsh tmux tree
+sudo apt install git vim zsh tmux tree sl
 # ascii art
 sudo apt install figlet
 which zsh
@@ -48,4 +48,8 @@ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.anyenv/envs/pyenv/plug
 * [anyenvで開発環境を整える](http://qiita.com/luckypool/items/f1e756e9d3e9786ad9ea)
 * [pyenvとvirtualenvで環境構築](http://qiita.com/Kodaira_/items/feadfef9add468e3a85b)
 * [anyenv環境でpyenvインストール後にハマったのでメモ](http://qiita.com/dodo5522/items/8e9e63d8c94a70fbbbb9)
+* [ターミナルマルチプレクサ tmux をカスタマイズする](http://qiita.com/b4b4r07/items/01359e8a3066d1c37edc)
+
+# trouble
+* tmuxが起動しなかった場合、/tmp/内のセッションをrm -rfすればよい。
 
