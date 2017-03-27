@@ -102,3 +102,5 @@ clear
 figlet Hello
 #sl
 #echo "Hello zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
