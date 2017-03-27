@@ -123,7 +123,7 @@ sudo apt insatall git zsh vim tmux tree figlet sl make build-essential libssl-de
 * [GitHub pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
 # trouble
-* tmuxが起動しなかった場合、/tmp/内のセッションをrm -rfすればよい。
+* tmuxが起動しなかった場合、/tmp/内のセッションをrm -rfすればよい。もしくは、デフォルトシェルが間違っているため、.tmux.confの2行目を修正する。
 * vimコマンド時のファイル名tab補完でエラーが出るとき、以下のコマンドで解決
   ```
    rm .zcompdump
