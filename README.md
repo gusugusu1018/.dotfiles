@@ -12,6 +12,7 @@
       * ekalinin/Dockerfile.vim
       * rcmdnk/vim-markdown
   * tmux
+  * fzf
   * anyenv
     * pyenv
       * virtualenv
@@ -46,6 +47,12 @@ rm hoge
 ## tmux
 ```
 sudo apt install tmux
+```
+
+## fzf
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 ```
 
 ## anyenv
