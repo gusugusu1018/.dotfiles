@@ -28,13 +28,14 @@ which zsh
 chsh
 cd
 curl -sL zplug.sh/installer | zsh
+# ascii art
+sudo apt install figlet
 ```
 
 ## vim
 ```
 sudo apt install vim
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh# ascii art
-sudo apt install figlet
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
 
 sh ./install.sh
 vim hoge
@@ -54,6 +55,11 @@ exec $SHELL -l
 ```
 
 ## pyenv
+Install requirements
+```
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
+```
 not on tmux
 ```
 anyenv install -l
@@ -80,19 +86,15 @@ sh ~/.dotfiles/ln.sh
 source ~/.zshrc
 ```
 
-## Install all
-```
-sudo apt insatall git zsh vim tmux tree figlet sl
-```
-
 ## docker
+[official site for docker install](https://docs.docker.com/engine/installation/linux/ubuntu/)
 ```
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
-sudo apt-get install docker-ce
+sudo apt install docker-ce
 apt-cache madison docker-ce
 ```
 if want to remove sudo
@@ -102,6 +104,12 @@ sudo groupadd docker
 sudo gpasswd -a $USER docker
 sudo reboot
 ```
+
+## Install all requirements of packages
+```
+sudo apt insatall git zsh vim tmux tree figlet sl make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils apt-transport-https ca-certificates curl software-properties-common
+```
+
 # reference
 * [zshの設定ファイルの読み込み順序と使い方Tipsまとめ](http://qiita.com/muran001/items/7b104d33f5ea3f75353f)
 * [とりあえずZshを使えば良いんだろう？](http://qiita.com/ktr_type23/items/3eb782f98c7a5f4c60b0)
@@ -112,7 +120,7 @@ sudo reboot
 * [ターミナルマルチプレクサ tmux をカスタマイズする](http://qiita.com/b4b4r07/items/01359e8a3066d1c37edc)
 * [zshでvim+Tabでエラーになる時の対処法](http://qiita.com/Asuforce/items/28b287fdb933d1985e15)
 * [Dockerコマンドをsudoなしで実行する方法](http://qiita.com/DQNEO/items/da5df074c48b012152ee)
-
+* [GitHub pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
 # trouble
 * tmuxが起動しなかった場合、/tmp/内のセッションをrm -rfすればよい。
