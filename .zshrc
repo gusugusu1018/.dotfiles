@@ -98,6 +98,7 @@ if [ -d $HOME/.anyenv ] ; then
 fi
 
 #zshrc
+clear
 figlet Hello
 #sl
 #echo "Hello zsh"
