@@ -106,6 +106,7 @@ set visualbell
 set showmatch
 " ステータスラインを常に表示
 set laststatus=2
+highlight statusline term=NONE cterm=NONE guifg=blue ctermfg=green ctermbg=black
 " コマンドラインの補完
 set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
