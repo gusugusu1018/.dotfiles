@@ -83,6 +83,9 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 
+# docker run gui aliase
+alias docker-runx='docker run -it --env DISPLAY=unix$DISPLAY --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"'
+
 # ls color on linux
 alias ls='ls -F --color'
 
