@@ -1,0 +1,56 @@
+# set default shell
+#set-option -g default-shell /usr/bin/zsh
+
+# default prefix key to C-b
+set -g prefix C-b
+
+# window index start from 1
+set -g base-index 1
+# pane index start from 1
+setw -g pane-base-index 1
+
+# reload .tmux.conf
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# copy mode
+# vi keybind
+set-window-option -g mode-keys vi
+# Prefix+v start copymode
+bind-key v copy-mode \; display "Copy mode!"
+bind-key -t vi-copy v begin-selection
+# Prefix+Enter/y copy
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -t vi-copy y     copy-pipe "reattach-to-user-namespace pbcopy"
+# Prefix+p paste
+# or C-V
+bind-key p paste-buffer
+
+# 256 color terminal
+set -g default-terminal "screen-256color"
+# status bar color
+set -g status-fg white
+set -g status-bg black
+# pane border color
+#set -g pane-border-fg blue
+#set -g pane-border-bg black
+# enclear active pane
+#set -g pane-active-border-fg black
+#set -g pane-active-border-bg blue
+
+# set command line color
+#set -g message-fg white
+#set -g message-bg black
+#set -g message-attr bright
+
+# setting status bar
+#set-option -g status-utf8 on
+# set top
+set-option -g status-position top
+## left side
+set -g status-left-length 90
+set-option -g status-left '#[fg=green]#H #[fg=cyan]pane:#P'
+## right side
+set -g status-right-length 90
+set -g status-right "#[fg=cyan][%Y-%m-%d(%a) %H:%M]"
+## set refresh intarval
+#set -g status-interval 60
