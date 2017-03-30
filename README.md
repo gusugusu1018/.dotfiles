@@ -114,7 +114,7 @@ sudo reboot
 
 ## Install all requirements of packages
 ```
-sudo apt insatall git zsh vim tmux tree figlet sl make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils apt-transport-https ca-certificates curl software-properties-common
+sudo apt install git zsh vim tmux tree figlet sl make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils apt-transport-https ca-certificates curl software-properties-common
 ```
 
 # reference
