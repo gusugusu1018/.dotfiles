@@ -1,11 +1,11 @@
 #!/bin/bash
 
-readonly VERSION="375.29"
+readonly VERSION="375.39"
 readonly FILENAME="NVIDIA-Linux-x86_64-${VERSION}.run"
 readonly FILEURL="http://jp.download.nvidia.com/XFree86/Linux-x86_64/${VERSION}/${FILENAME}"
 
 InstallProcess() {
-
+  echo "sudo stop lightdm"
   sudo stop lightdm
 
   sudo apt-get remove nvidia* && sudo apt-get autoremove
