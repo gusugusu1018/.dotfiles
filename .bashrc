@@ -125,7 +125,8 @@ fi
 
 # for anyenv
 if [ -d $HOME/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
-
