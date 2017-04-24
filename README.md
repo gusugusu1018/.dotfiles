@@ -83,6 +83,22 @@ anyenv versions
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.anyenv/envs/pyenv/plugins/pyenv-virtualenv
 ```
 
+```
+pyenv virtualenv 3.3.3 virtural-3.3.3
+# change directory you like
+pyenv local virtual-3.3.3
+```
+
+## opencv @python
+```
+pyenv install anaconda-2.1.0
+pyenv virtualenv anaconda-2.1.0 virtual-conda-2.1.0
+pyenv versions
+# change directory you like
+pyenv local virtual-conda-2.1.0
+conda install -c https://conda.binstar.org/jjhelmus opencv
+```
+
 ## .dotfiles
 ```
 git clone https://github.com/minaminoki/.dotfiles.git ~/.dotfiles
