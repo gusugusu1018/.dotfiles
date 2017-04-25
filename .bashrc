@@ -116,6 +116,9 @@ fi
 # for ros
 if [ -d /opt/ros/indigo ]; then
   source /opt/ros/indigo/setup.bash
+    if [ -d ~/Projects/slam ]; then
+      export ROS_PACKAGE_PATH=~/Projects/slam/ORB_SLAM2:~/Projects/slam/ORB_SLAM2/Examples/ROS:/opt/ros/indigo/share:/opt/ros/indigo/stacks
+    fi
 fi
 
 # for cuda nvcc

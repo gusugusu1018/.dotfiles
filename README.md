@@ -16,6 +16,7 @@
   * anyenv
     * pyenv
       * virtualenv
+      * anaconda
   * docker
 
 ## Install git
