@@ -129,6 +129,15 @@ sudo gpasswd -a $USER docker
 sudo reboot
 ```
 
+## How to update Git
+```
+sudo apt-get install git
+git version
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get upgrade
+```
+
 ## Install all requirements of packages
 ```
 sudo apt install git zsh vim tmux tree figlet sl make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils apt-transport-https ca-certificates curl software-properties-common
