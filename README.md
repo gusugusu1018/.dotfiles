@@ -19,6 +19,31 @@
       * anaconda
   * docker
 
+## Nvidia-driver and CUDA-10.0 setup
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+[リンク](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=deblocal)からdebファイルをダウンロード。  
+ただし、nvidiaのアカウントが必要。  
+
+```
+sudo sh -c "echo 'blacklist nouveau' >> /etc/modprobe.d/blacklist-nouveau.conf"
+sudo sh -c "echo 'options nouveau modeset=0' >>/etc/modprobe.d/blacklist-nouveau.conf"
+sudo dpkg -i cuda-repo-ubuntu1604-10-0-local-10.0.130-410.48_1.0-1_amd64.deb
+udo apt-key add /var/cuda-repo-10-0-local-10.0.130-410.48/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda
+
+```
+
+もしdpkgに失敗した時は
+```
+sudo dpkg -r cuda-repo-ubuntu1604
+```
+
 ## Install git
 ```
 sudo apt install git
@@ -29,7 +54,7 @@ sudo apt install zsh
 which zsh
 chsh
 cd
-curl -sL zplug.sh/installer | zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 # ascii art
 sudo apt install figlet
 ```

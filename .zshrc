@@ -102,7 +102,7 @@ fi
 
 #zshrc
 clear
-figlet Hello
+#figlet Hello
 #sl
 #echo "Hello zsh"
 
