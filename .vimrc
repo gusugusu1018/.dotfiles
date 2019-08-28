@@ -5,7 +5,12 @@ set title
 set fenc=utf-8
 set showcmd
 set showmatch
-set tabstop=3
+set tabstop=2
+set shiftwidth=2
+set softtabstop=0
+set noexpandtab
+set autoindent
+set smartindent
 
 "=========
 "vim-clang
