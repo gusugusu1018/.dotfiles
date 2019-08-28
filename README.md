@@ -19,6 +19,32 @@
       * anaconda
   * docker
 
+# vim Environments
+
+* [dein.vim](https://github.com/Shougo/dein.vim)
+* [Reference](http://atomiyama.com/linux/page/a-vim-and-vim-clang/)
+
+```
+sudo apt install clang
+sudo apt install clang-format
+pip3 install --user pynvim
+mkdir -p ~/.cache/dein
+cd ~/.cache/dein
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+
+```
+
+```
+:call dein#install()
+:call dein#update()
+```
+
+## Memo
+
+https://qiita.com/reireias/items/beaa3bb0e299ae934217
+
+
 ## Nvidia-driver and CUDA-10.0 setup
 
 ```
