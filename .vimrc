@@ -5,12 +5,27 @@ set title
 set fenc=utf-8
 set showcmd
 set showmatch
-set tabstop=3
-set shiftwidth=3
-set softtabstop=0
-set noexpandtab
 set autoindent
 set smartindent
+
+if has("autocmd")
+  filetype plugin on
+  filetype indent on
+  " sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtab
+  autocmd FileType c,cpp       setlocal sw=3 sts=3 ts=3 noet
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType js          setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scala       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scss        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
+endif
 
 "=========
 "vim-clang
@@ -81,5 +96,4 @@ if dein#load_state('~/.cache/dein')
   call dein#end()
 endif
 
-" filetype plugin indent on
 syntax enable
