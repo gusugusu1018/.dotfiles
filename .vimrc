@@ -7,6 +7,7 @@ set showcmd
 set showmatch
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 if has("autocmd")
   filetype plugin on
