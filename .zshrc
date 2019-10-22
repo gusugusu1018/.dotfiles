@@ -102,6 +102,7 @@ if [ -d $HOME/.anyenv ] ; then
 		fi
 	fi
 fi
+export GOPATH=$HOME/.go
 ## ROS
 #source /opt/ros/bouncy/setup.bash
 #export OSPL_URI=file:///usr/etc/opensplice/config/ospl.xml
