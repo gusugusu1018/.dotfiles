@@ -89,21 +89,23 @@ alias docker-runx='docker run -it --env DISPLAY=unix$DISPLAY --volume="/tmp/.X11
 # ls color on linux
 alias ls='ls -F --color'
 
-# enyenv
+# anyenv
 if [ -d $HOME/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-
-#    for D in `ls $HOME/.anyenv/envs`
-#    do
-#        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-#    done
+	export PATH="$HOME/.anyenv/bin:$PATH"
+	eval "$(anyenv init -)"
+# pyenv
+	if [ -d $HOME/.anyenv/envs/pyenv ] ; then
+		eval "$(pyenv init -)"
+# pyenv virtualenv
+		if [ -d $HOME/.anyenv/envs/pyenv/plugins/pyenv-virtualenv ] ; then
+			eval "$(pyenv virtualenv-init -)"
+		fi
+	fi
 fi
+## ROS
+#source /opt/ros/bouncy/setup.bash
+#export OSPL_URI=file:///usr/etc/opensplice/config/ospl.xml
+#source $HOME/Projects/ros2_ws/install/local_setup.bash
+#source /opt/ros/crystal/setup.bash
 
-#zshrc
 clear
-#figlet Hello
-#sl
-#echo "Hello zsh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
