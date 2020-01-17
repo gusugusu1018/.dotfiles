@@ -1,16 +1,12 @@
-# zprofile
-autoload -U compinit
-compinit
+#################### PROMPT ######################
+# Set up the prompt
 
-# In case of using promptinit
-# $ prompt -l
-# setting for prompt
-# $ prompt [prompt名]
-# autoload -U promptinit
-# promptinit
-# my prompt
+#autoload -Uz promptinit
+#promptinit
+#prompt clint
 PROMPT='%F{6}%~ %f%F{3}>%f%F{4}>%f%F{5}>%f%F{6}>%f '
 
+##################### ZPLUG #######################
 # zplug section
 source ~/.zplug/init.zsh
 # zsh-autosuggestions
@@ -26,40 +22,28 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
-zplug load --verbose
+zplug load
+###################### ALIAS ########################
+# ls color on linux
+alias ls='ls -F --color'
+alias docker-images-clean="docker rmi -f $(docker images  --filter "dangling=true" -aq)"
 
-# history path
-export HISTFILE=${HOME}/.zhistory
-# history size in memory
-export HISTSIZE=1000
-# history size in file
-export SAVEHIST=100000
-# ignore overlapped history
+###################### HISTORY #######################
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
 setopt hist_ignore_dups
-# save start and finish
-setopt EXTENDED_HISTORY
-# share history
 setopt share_history
-# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
-setopt hist_ignore_all_dups
-# スペースで始まるコマンド行はヒストリリストから削除
+setopt histignorealldups
+setopt EXTENDED_HISTORY
 setopt hist_ignore_space
-# ヒストリを呼び出してから実行する間に一旦編集可能
-setopt hist_verify
-# 余分な空白は詰めて記録
 setopt hist_reduce_blanks  
-# 古いコマンドと同じものは無視 
 setopt hist_save_no_dups
-# not save history command
 setopt hist_no_store
-# 補完時にヒストリを自動的に展開
-setopt hist_expand
-# add history to increamental
 setopt inc_append_history
-# search on increamental
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
 
+setopt hist_expand
 
 # Use hard limits, except for a smaller stack and no core dumps
 unlimit
@@ -69,44 +53,42 @@ limit -s
 
 umask 022
 
-# Set up aliases
-alias mv='nocorrect mv'       # no spelling correction on mv
-alias cp='nocorrect cp'       # no spelling correction on cp
-alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
-alias j=jobs
-alias pu=pushd
-alias po=popd
-alias d='dirs -v'
-alias h=history
-alias l='ls'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-
-# docker run gui aliase
-alias docker-runx='docker run -it --env DISPLAY=unix$DISPLAY --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"'
-
-# ls color on linux
-alias ls='ls -F --color'
+#zstyle ':completion:*' auto-description 'specify: %d'
+#zstyle ':completion:*' completer _expand _complete _correct _approximate
+#zstyle ':completion:*' format 'Completing %d'
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*' menu select=2
+#eval "$(dircolors -b)"
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+#zstyle ':completion:*' menu select=long
+#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle ':completion:*' use-compctl false
+#zstyle ':completion:*' verbose true
+#
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+#zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
 	export PATH="$HOME/.anyenv/bin:$PATH"
 	eval "$(anyenv init -)"
-# pyenv
+	# pyenv
 	if [ -d $HOME/.anyenv/envs/pyenv ] ; then
 		eval "$(pyenv init -)"
-# pyenv virtualenv
+		# pyenv virtualenv
 		if [ -d $HOME/.anyenv/envs/pyenv/plugins/pyenv-virtualenv ] ; then
 			eval "$(pyenv virtualenv-init -)"
 		fi
 	fi
+	if [ -d $HOME/.anyenv/envs/nodenv ] ; then
+		eval "$(nodenv init -)"
+	fi
 fi
-export GOPATH=$HOME/.go
-## ROS
-#source /opt/ros/bouncy/setup.bash
-#export OSPL_URI=file:///usr/etc/opensplice/config/ospl.xml
-#source $HOME/Projects/ros2_ws/install/local_setup.bash
-#source /opt/ros/crystal/setup.bash
 
-clear
+# kubectl
+if type kubectl > /dev/null 2>&1; then
+	source <(kubectl completion zsh)
+fi
