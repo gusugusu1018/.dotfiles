@@ -83,8 +83,15 @@ if [ -d $HOME/.anyenv ] ; then
 			eval "$(pyenv virtualenv-init -)"
 		fi
 	fi
+	# nodenv
 	if [ -d $HOME/.anyenv/envs/nodenv ] ; then
 		eval "$(nodenv init -)"
+	fi
+	# goenv
+	if [ -d $HOME/.anyenv/envs/goenv ] ; then
+		eval "$(goenv init -)"
+		export GOPATH=$HOME/.go
+		export PATH=$GOPATH/bin:$PATH
 	fi
 fi
 
