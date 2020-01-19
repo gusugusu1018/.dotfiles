@@ -98,7 +98,12 @@ fi
 # kubectl
 if type kubectl > /dev/null 2>&1; then
 	source <(kubectl completion zsh)
+	# helm
 	if type helm > /dev/null 2>&1; then
 		source <(helm completion zsh)
+	fi
+	# minikube
+	if type minikube > /dev/null 2>&1; then
+		source <(minikube completion zsh)
 	fi
 fi
